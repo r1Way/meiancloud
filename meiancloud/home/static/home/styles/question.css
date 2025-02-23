@@ -1,0 +1,55 @@
+/* 设置居中对齐 */
+/* .comment-container {
+    如果需要对 .comment-container 进行样式调整，可以在这里添加
+} */
+
+.text-center {
+    text-align: center;
+}
+
+#qaSection {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.qa-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.qa-question {
+    font-weight: bold;
+    margin-bottom: 5px;
+    cursor: pointer;
+    position: relative;
+}
+
+.qa-question::after {
+    content: '▼';
+    position: absolute;
+    right: 0;
+    transition: transform 0.3s;
+}
+
+.qa-question.active::after {
+    transform: rotate(180deg);
+}
+
+.qa-answer {
+    display: none; /* 默认隐藏答案 */
+    padding-left: 20px; /* 左边距 */
+    margin-left: 20px; /* 新增左边距 */
+    background-color: #f9f9f9; /* 新增背景颜色，可根据需要调整 */
+    border-left: 2px solid #264c30; /* 可选：添加左边框以突出显示 */
+    padding-top: 5px; /* 可选：增加顶部内边距 */
+    padding-bottom: 5px; /* 可选：增加底部内边距 */
+}
+
+.qa-question.active + .qa-answer {
+    display: block; /* 当问题处于激活状态时显示答案 */
+}

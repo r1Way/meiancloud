@@ -1,0 +1,21 @@
+{% extends 'home/base.html' %}
+
+{% block title %}
+    <title>需要登录</title>
+{% endblock title %}
+    
+    
+
+{% block content %}
+<h1 style="text-align: center; font-size: 100;">需要登录！</h1>
+<h2 style="text-align: center; font-size: 60;">您当前未登录，无法提交评论以及访问个人中心，请先登录</h2>
+<a style= "text-align: center; display: block;" href="{% url 'home:login' %}">3秒后将自动访问，如果浏览器没有响应，请点击我。</a>
+{% endblock content %}
+    
+{% block script %}
+    <script>
+        setTimeout(() => {
+            window.location.href="{% url 'home:login' %}";
+        }, 3000);
+    </script>
+{% endblock script %}

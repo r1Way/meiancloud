@@ -1,0 +1,85 @@
+{% extends "home/base.html" %}
+
+{% load static %}
+
+{% block otherstyles %}
+<link rel="stylesheet" href="{% static 'home/styles/question.css' %}">
+{% endblock otherstyles %}
+
+{% block title %}
+<title>常见问题</title>
+{% endblock title %}
+
+{% block content %}
+<h1 style="text-align: center;">常见问题</h1>
+<div id="qaSection">
+    <div class="qa-item">
+        <p class="qa-question">问：如何前往梅庵参观？</p>
+        <!-- <p class="qa-answer">
+            答：首先搜索并关注【东大信息化】微信公众号，点击最左边导航菜单栏-【参观东大】——【预约申请】，登陆平台，如果还没注册，需要先行注册，然后输入参观者个人信息，等待审批即可；通过后即可前往东南大学四牌楼校区，从圆顶大礼堂向西，经体育馆即可到达梅庵。在校园内询问学生或工作人员也可获得详细指路。
+        </p> -->
+        <p class="qa-answer">
+            答：如果你想要预约参观东南大学四牌楼校区的梅庵并享受讲解服务，可以按照以下流程操作：梅庵目前仅接受团体预约，不接受个人预约。请至少提前一周联系至善讲解团，说明团体名称、人数、预约日期和时间等信息。校外人员需先联系校内部门申请入校。预约时可添加微信号tyguaojio12584联系童杨（信息更新至2025年2月15日）。预约示例：【XX单位/团体，共XX人，预约XX月XX日下午3:00参观梅庵】。参观时请遵守场馆规定，爱护文物，保持秩序。更多信息请查看微信公众号
+            <a href="https://mp.weixin.qq.com/s/3eQuYZkU_2jpd7hcyfjp5A" target="_blank">【SEU至善讲解团】</a>。
+        </p>
+    </div>
+    <div class="qa-item">
+        <p class="qa-question">问：梅庵的地理位置在哪里？</p>
+        <p class="qa-answer">答：梅庵位于南京市玄武区东南大学四牌楼校区西北角，紧邻六朝松。</p>
+    </div>
+    <div class="qa-item">
+        <p class="qa-question">问：梅庵是为了纪念谁而建的？</p>
+        <p class="qa-answer">答：梅庵是为了纪念两江师范学堂校长李瑞清（字梅庵，号清道人）而建的。</p>
+    </div>
+    <div class="qa-item">
+        <p class="qa-question">问：梅庵最初是什么形式的建筑？</p>
+        <p class="qa-answer">
+            答：梅庵最初是三间茅屋，后来改建为砖混结构平房。梅庵的建筑面积为204平方米，通面阔15.50米，进深8.80米。</p>
+    </div>
+    <div class="qa-item">
+        <p class="qa-question">问：梅庵门前的校训木匾是谁手书的？</p>
+        <p class="qa-answer">答：梅庵门前的校训木匾是李瑞清手书的，内容为“嚼得菜根，做得大事”。</p>
+    </div>
+    <div class="qa-item">
+        <p class="qa-question">问：梅庵在党史上有何重要地位？</p>
+        <p class="qa-answer">
+            答：梅庵是中国社会主义青年团南京地委的成立地，也是中国社会主义青年团第二次全国代表大会预备会议的召开地，在党史上具有重要地位。</p>
+    </div>
+    <div class="qa-item">
+        <p class="qa-question">问：梅庵的建筑风格有何特点？</p>
+        <p class="qa-answer">
+            答：梅庵的建筑风格融合了中西元素，既有民国时期的典型特征，如土黄色外墙和青灰色装饰石材的搭配，又融入了西方建筑的一些风格，如内廊式平面布局。</p>
+    </div>
+    <div class="qa-item">
+        <p class="qa-question">问：梅庵在东南大学校园内有何影响？</p>
+        <p class="qa-answer">
+            答：梅庵是东南大学校园内的一个重要地标，也是校园文化的重要组成部分。它见证了东南大学的百年历史，承载着厚重的文化底蕴。</p>
+    </div>
+    <div class="qa-item">
+        <p class="qa-question">问：除了作为革命历史见证外，梅庵还有哪些其他功能？</p>
+        <p class="qa-answer">
+            答：除了作为革命历史见证外，梅庵在历史上还曾作为音乐教室使用。此外，南高时期王燕卿先生曾在此教授古琴，由此而有梅庵琴派传世至今。</p>
+    </div>
+    <div class="qa-item">
+        <p class="qa-question">问：梅庵被列为南京市文物保护单位的时间是什么时候？</p>
+        <p class="qa-answer">答：梅庵被列为南京市文物保护单位的时间是1992年。</p>
+    </div>
+</div>
+    <br><br>
+{% endblock content %}
+
+{% block script %}
+<script>
+    // 获取所有的问题元素
+    var questions = document.querySelectorAll('.qa-question');
+
+    // 为每个问题添加点击事件监听器
+    questions.forEach(function(question) {
+        question.addEventListener('click', function() {
+            // 切换active类，用于控制答案的显示与隐藏
+            this.classList.toggle('active');
+        });
+    });
+</script>
+
+{% endblock script %}

@@ -1,0 +1,32 @@
+/* body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+} */
+
+.agreement-box {
+    background-color: #ffffff; /* 白色背景 */
+    border-radius: 15px; /* 圆角矩形 */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 轻微阴影效果 */
+    max-width: 800px; /* 限制最大宽度以适应不同屏幕 */
+    width: 90%; /* 在小屏幕上保持相对宽度 */
+    margin: auto; /* 水平居中 */
+}
+
+.agreement-box h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.agreement-box p {
+    text-indent: 4ex;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}

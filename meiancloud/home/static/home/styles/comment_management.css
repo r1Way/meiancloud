@@ -1,0 +1,76 @@
+/* 设置表格容器样式 */
+.table-container{
+    margin:20px;
+}
+
+/* 设置表格的基本样式 */
+table {
+    width: 100%;
+    border-collapse: collapse; /* 合并单元格边框 */
+
+    font-family: Arial, sans-serif;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); /* 添加阴影效果 */
+}
+
+/* 设置表头样式 */
+thead tr {
+    background-color: #264c30; /* 表头背景色 */
+    color: #ffffff; /* 表头文字颜色 */
+    text-align: center;
+}
+
+/* 设置表头单元格样式 */
+th {
+    padding: 12px 15px;
+    font-weight: bold;
+    border: 1px solid #dddddd; /* 单元格边框 */
+}
+
+/* 设置表格内容行样式 */
+tbody tr {
+    border-bottom: 1px solid #dddddd; /* 行之间的分隔线 */
+}
+
+/* 设置表格内容行交替背景色 */
+tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+/* 设置表格内容行悬停效果 */
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* 设置表格内容单元格样式 */
+td {
+    padding: 12px 15px;
+    text-align: center; /* 单元格内容居中 */
+    border: 1px solid #dddddd; /* 单元格边框 */
+}
+
+/* 设置操作按钮的样式 */
+button {
+    padding: 5px 10px;
+    margin: 2px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* 设置审核通过按钮的样式 */
+button[name="approve"] {
+    background-color: #4CAF50; /* 绿色背景 */
+    color: white;
+}
+
+/* 设置删除按钮的样式 */
+button[name="delete"] {
+    background-color: #f44336; /* 红色背景 */
+    color: white;
+}
+
+/* 设置按钮悬停效果 */
+button:hover {
+    opacity: 0.8;
+}

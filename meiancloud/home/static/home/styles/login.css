@@ -1,0 +1,105 @@
+/* Login Container */
+.login-container {
+    margin: 70px auto;
+    background-color: #ffffff;
+    padding: 2rem 2.5rem 2rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+    align-items: center;
+}
+
+.login-container h2 {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.login-container p {
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+/* Form Styles */
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.form-group input:focus {
+    border-color: #264c30;
+    outline: none;
+}
+
+.form-group .input-birthday{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Error Messages */
+.error-message {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 0.75rem;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.field-error {
+    color: #c62828;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+/* Button Styles */
+.login-button {
+    background-color: #264c30;
+    color: #ffffff;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #263b30;
+}
+
+/* Signup Link */
+.signup-link {
+    margin-top: 1.5rem;
+    color: #666;
+}
+
+.signup-link a {
+    color: #264730;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}

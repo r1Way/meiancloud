@@ -1,0 +1,136 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block title %}
+<title>个人中心</title>
+{% endblock title %}
+
+{% block otherstyles %}
+    <link rel="stylesheet" href="{% static 'home/styles/userprofile.css' %}">
+    <!-- <link rel="stylesheet" href="#"> -->
+{% endblock otherstyles %}
+
+
+{% block headscript %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+{% endblock headscript %}
+    
+
+{% block content %}
+    <div class="container">
+        <div class="left-side">
+            <div class="avatar">
+                <img src="{{ MEDIA_URL }}{{ current_userprofile.image.url }}" alt="头像" class="avatar-img">
+            </div>
+            <div class="nickname">
+                <h2>{{ current_userprofile.nick_name }}</h2>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="right-side">
+            <div class="info-item">
+                <label>昵称:</label>
+                <span>{{ current_userprofile.nick_name }}</span>
+            </div>
+            <div class="info-item">
+                <label>邮箱:</label>
+                <span>{{ current_user.email }}</span>
+            </div>
+            <div class="info-item">
+                <label>性别:</label>
+                <span>{{ current_userprofile.get_gender_display }}</span>
+            </div>
+            <div class="info-item">
+                <label>生日:</label>
+                <span>{{ current_userprofile.birthday }}</span>
+            </div>
+            <div class="info-item">
+                <label>个性签名:</label>
+                <span>
+                    {% if current_userprofile.sign %}
+                        {{ current_userprofile.sign }}
+                    {% else %}
+                        <i>暂无个性签名</i>
+                    {% endif %}
+                </span>
+            </div>
+        </div>
+        
+        {% if user.is_authenticated and not user.is_superuser%}
+            <!-- <span>yes</span>
+            <span>{{user.id}}+{{realuserid}}</span> -->
+            {% if user.id == current_user.id %}
+            <div class="divider"></div>
+            <div class="buttons">
+                <a href="{% url 'home:changepsw' userid=user.id %}"><button>修改密码</button></a>
+                <a href="{% url 'home:editprofile' userid=user.id %}"><button>修改个人信息</button></a>
+                
+                {% if not user.is_superuser %}
+                    <button id="delete-button">注销账户</button>
+                {% endif %}
+            </div>
+            {% endif %}
+                
+        {% endif %}
+            
+        
+    </div>
+
+    <!-- <div id="password-modal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border: 1px solid #ccc; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);"> -->
+    <div id="password-modal">
+        <h3>确定要注销吗？请输入账号密码：</h3>
+        <h3 style="color: red;">注意！此操作不可撤销！</h3>
+        <input type="password" id="password-input" placeholder="请输入密码">
+        <button id="confirm-button" class="btn btn-primary">确认</button>
+        <button id="cancel-button" class="btn btn-secondary">取消</button>
+    </div>
+
+{% endblock content %}
+
+
+{% block script %}
+<script type="text/javascript">
+    $(document).ready(function() {
+        // 点击注销按钮，显示弹窗
+        $('#delete-button').click(function() {
+            $('#password-modal').show();
+        });
+
+        // 点击取消按钮，隐藏弹窗
+        $('#cancel-button').click(function() {
+            $('#password-modal').hide();
+        });
+
+        // 点击确认按钮，发送 AJAX 请求
+        $('#confirm-button').click(function() {
+            var password = $('#password-input').val();
+
+            if (!password) {
+                alert("请输入密码！");
+                return;
+            }
+
+            // 发送 AJAX 请求
+            $.ajax({
+                url: "{% url 'home:delete_account' %}",
+                method: "POST",
+                data: {
+                    csrfmiddlewaretoken: '{{ csrf_token }}',  // CSRF 令牌
+                    password: password,  // 用户输入的密码
+                },
+                success: function(response) {
+                    if (response.success) {
+                        alert("注销成功！");
+                        window.location.href = "{% url 'home:index' %}";  // 跳转到首页
+                    } else {
+                        alert("密码错误，请重试！");
+                    }
+                },
+                error: function() {
+                    alert("请求失败，请重试！");
+                }
+            });
+        });
+    });
+</script>
+{% endblock script %}
+    

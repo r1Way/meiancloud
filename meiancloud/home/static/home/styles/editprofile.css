@@ -1,0 +1,135 @@
+.container {
+    margin: 70px auto;
+    background-color: #ffffff;
+    padding: 2rem 2.5rem 2rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+    align-items: center;
+}
+
+h2 {
+    color: #264c30;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #264730;
+    font-weight: bold;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+textarea{
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    resize: none;
+    font-family: Arial, sans-serif;
+}
+
+input[type="file"] {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #264c30;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #263b30;
+}
+
+.error {
+    color: #ff4d4d;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* 图片显示 */
+/* 整体容器 */
+.profile-image {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* 左侧的图片区域 */
+.image-left {
+    flex: 1;
+    text-align: center;
+}
+
+.image-left img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ccc;
+}
+
+/* 右侧按钮区域 */
+.image-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* 选择文件输入框 */
+#id_image {
+    margin-top: 5px;
+}
+
+/* 恢复默认按钮 */
+.reset-button {
+    padding: 5px 15px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.reset-button:hover {
+    background-color: #e0e0e0;
+}

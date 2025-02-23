@@ -1,0 +1,367 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>循迹梅庵</title>
+{% endblock title %}
+    
+
+{% block otherstyles %}
+    <link rel="stylesheet" href="{% static 'home/findmeian/styles.css' %}">
+    <!-- 引入 Swiper -->
+    <link rel="stylesheet" href="{% static 'home/Swiper/swiper-bundle.min.css' %}">
+{% endblock otherstyles %}
+
+{% block content %}
+<div class="header-avoid"></div>
+
+<h1 style="text-align: center;">循迹梅庵</h1>
+
+    <!-- 按钮部分 -->
+    <div class="buttons">
+        <div class="line1">
+            <div class="left">
+                <div class="room14">
+                    <button data-target="section1" class="button1">梅庵概况</button>
+                    <button data-target="section4" class="button4">会议场景</button>
+                </div>
+                <div class="corridor">过道</div>
+            </div>
+            <div class="room56">
+                <button data-target="section6" class="button6">青年运动</button>
+                <button data-target="section5" class="button5">会议记录</button>
+            </div>
+        </div>
+
+        <div class="room23">
+            <button data-target="section2" class="button2">师道梅庵</button>
+            <button data-target="section3" class="button3">真理耀东南</button>
+        </div>
+    </div>
+
+    <!-- 内容区域 -->
+    <div class="sections">
+        <!-- 梅庵 -->
+        <section id="section1">
+            <h2>梅庵概况</h2>
+            <div class="scroll-section">
+              <div class="image-container">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                          <img src="{% static 'home/findmeian/img/1/1.jpg' %}" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                          <img src="{% static 'home/findmeian/img/1/2.jpg' %}" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                          <img src="{% static 'home/findmeian/img/1/3.jpg' %}" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                          <img src="{% static 'home/findmeian/img/1/4.jpg' %}" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                          <img src="{% static 'home/findmeian/img/1/5.jpg' %}" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+                <div class="text-container">
+                    <p class="text">梅庵，位于<b>东南大学四牌楼校区</b>西北角，在六朝松旁，西临进香河，北近鸡笼山。1902年，东南大学的前身三江师范学堂在四牌楼创建。1905年，学堂改名为两江师范学堂。1915年，南京高等师范学校在此基础上成立。江谦校长为纪念<b>两江师范学堂</b>监督<b>李瑞清</b>办学之功，在六朝松旁，以带皮松木为梁架，建起三间茅草屋，周围环以梅树，以李瑞清之号“梅庵”命名。</p>
+                    <p class="text">南高时期，近代著名古琴家王燕卿曾在梅庵教习古琴，由此而有梅庵琴派传世至今。五四运动以后，这里逐渐成为江苏地区马克思主义的传播中心和党团组织的活动基地。1933年，国立中央大学时期改建为砖混结构平房，作为音乐教室使用。1947年，著名历史学家<b>柳诒徵</b>教授亲笔题写“梅庵”匾额。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 师道梅庵 -->
+        <section id="section2">
+            <h2>师道梅庵</h2>
+            <div class="scroll-section">
+                <div class="image-container">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide">
+                            <div class="swiper-zoom-container">
+                              <img src="{% static 'home/findmeian/img/2/1.jpg' %}" />
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="swiper-zoom-container">
+                              <img src="{% static 'home/findmeian/img/2/2.jpg' %}" />
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="swiper-zoom-container">
+                              <img src="{% static 'home/findmeian/img/2/3.jpg' %}" />
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="swiper-zoom-container">
+                              <img src="{% static 'home/findmeian/img/2/4.jpg' %}" />
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="swiper-zoom-container">
+                              <img src="{% static 'home/findmeian/img/2/5.jpg' %}" />
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="swiper-zoom-container">
+                              <img src="{% static 'home/findmeian/img/2/6.jpg' %}" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="text-container">
+                    <p class="text"><b>师道梅庵，潜心治校，教育救国</b>，两江师范学堂监督李瑞清掌校期间大力改革，贯通中西，他教育救国、潜心治校，传授新知、作育新才，师道大义、呵护学子，是中国近现代教育的重要奠基人，中国现代美术教育的先驱，中国现代高等师范教育的开拓者。他视教育若性命，学校若家庭，学生若子弟，亲定校训<b>嚼得菜根，做得大事</b>，在他的悉心治理下，两江师范学堂形成了俭朴、勤奋、诚笃的校风和独立思考，崇实务本的学风，成为青年有志学子向往聚集之地。李瑞清主政时的两江师范学堂践行教育救国的进步思想，为革命救国保育了新生的力量。学府圣地，革命摇篮；赤子忱心，薪火以传。马克思主义在这里传播弘扬，党团组织在这里诞生成长，革命精神在这里孕育传承，红色基因深深熔铸于东大精神之中。</p>
+                </div>
+            </div>
+            
+        </section>
+
+        <!-- 真理耀东南 -->
+        <section id="section3">
+            <h2>真理耀东南</h2>
+            <div class="scroll-section">
+              <div class="image-container">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                          <img src="{% static 'home/findmeian/img/3/1.jpg' %}" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                          <img src="{% static 'home/findmeian/img/3/2.jpg' %}" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                          <img src="{% static 'home/findmeian/img/3/3.jpg' %}" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                          <img src="{% static 'home/findmeian/img/3/4.jpg' %}" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                          <img src="{% static 'home/findmeian/img/3/5.jpg' %}" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                          <img src="{% static 'home/findmeian/img/3/6.jpg' %}" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                          <img src="{% static 'home/findmeian/img/3/7.jpg' %}" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                          <img src="{% static 'home/findmeian/img/3/8.jpg' %}" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+                <div class="text-container">
+                    <p class="text">梅庵不仅是马克思主义的传播中心之一，更在中国革命历史上留下了浓墨重彩的一笔。它见证了<b>中国社会主义青年团第二次全国代表大会</b>的召开，而这次会议是中国青年运动发展的重要里程碑。</p>
+                    <p class="text">在五四运动后，马克思主义在中国广泛传播，南京高等师范学校逐步成为江苏地区马克思主义的传播中心和党团组织活动的重要基地。这里汇聚了一批热血青年，他们积极投身革命，为中国的未来奋斗。<b>少年中国学会南京分会</b>便是在这样的背景下成立的。南京高等师范学校的教员杨贤江担任书记，积极宣传马克思主义，主办《少年中国》杂志，为马克思主义在中国的传播做出了重要贡献。</p>
+                    <p class="text">1921年5月，南京高等师范学校进步学生<b>谢远定</b>、<b>吴肃</b>等人成立了“马克思主义研究会”，秘密宣传马克思主义。随后，南京社会主义青年团也宣告成立，为革命群众运动的发展奠定了思想和群众基础。早期南京党团活动多发生在梅庵，这里成为了革命青年们交流思想、策划行动的重要场所。</p>
+                  </div>
+            </div>
+        </section>
+
+        <!-- 会议场景 -->
+        <section id="section4">
+            <h2>会议场景</h2>
+            <div class="scroll-section">
+              <div class="image-container">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                          <img src="{% static 'home/findmeian/img/4/1.jpg' %}" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                          <img src="{% static 'home/findmeian/img/4/2.jpg' %}" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                          <img src="{% static 'home/findmeian/img/4/3.jpg' %}" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                          <img src="{% static 'home/findmeian/img/4/4.jpg' %}" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                          <img src="{% static 'home/findmeian/img/4/5.jpg' %}" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                          <img src="{% static 'home/findmeian/img/4/6.jpg' %}" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                          <img src="{% static 'home/findmeian/img/4/7.jpg' %}" />
+                        </div>
+                      </div>
+                      
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+                <div class="text-container">
+                    <p class="text"><b>1923年8月20日至25日</b>，中国社会主义青年团第二次全国代表大会在梅庵召开。毛泽东同志以中共中央代表的身份参加了中国社会主义青年团第二次全国代表大会。这次大会是决定青年团发展方向的一次具有重要历史意义的会议，也是团的历史上唯一一次在高校召开的全国代表大会。</p>
+                    <p class="text">在团二大第七次会议上，代表们再次讨论了<b>团与党的关系</b>，即：组织独立，政策上完全服从共产党；中国共产党与中国社会主义青年团中央开会时互派代表；中国共产党应尽力援助中国社会主义青年团。从“协定”到“服从”，党团关系就此确定，这是此次大会最突出的成就。这保证了团与党在思想上完全一致，行动上沿着党指引的方向前进，从而在时代洪流中始终把握着正确的方向。</p>
+                    <p class="text">可以说，团的一大主要宣布了组织诞生，而团的二大，真正决定了团的发展方向和各项工作的开展细则。团二大还对团章做了第一次修正，与党的二大党章的分章完全一致。</p>
+                  </div>
+            </div>
+        </section>
+
+        <!-- 会议记录 -->
+        <section id="section5">
+            <h2>会议记录</h2>
+            <div class="scroll-section">
+              <div class="image-container">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                          <img src="{% static 'home/findmeian/img/5/1.jpg' %}" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                          <img src="{% static 'home/findmeian/img/5/2.jpg' %}" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                          <img src="{% static 'home/findmeian/img/5/3.jpg' %}" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                          <img src="{% static 'home/findmeian/img/5/4.jpg' %}" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+                <div class="text-container">
+                    <p class="text">图中展示了团二大的主要内容。这次大会通过了一系列重要决议，涵盖了青年妇女运动、学生运动、工人运动、农民运动以及教育和宣传等多个领域，进一步明确了青年团在革命斗争中的职责和方向。大会强调了加强组织建设、扩大团员队伍、提高青年思想觉悟的重要性，并提出了团结广大青年，为中国革命事业贡献力量的目标。这次会议不仅推动了青年团的发展，也为后续的革命工作奠定了基础，具有重要的历史意义。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 青年运动 -->
+        <section id="section6">
+            <h2>青年运动</h2>
+            <div class="scroll-section">
+              <div class="image-container">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                          <img src="{% static 'home/findmeian/img/6/1.jpg' %}" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                          <img src="{% static 'home/findmeian/img/6/2.jpg' %}" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                          <img src="{% static 'home/findmeian/img/6/3.jpg' %}" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                          <img src="{% static 'home/findmeian/img/6/4.jpg' %}" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="swiper-zoom-container">
+                          <img src="{% static 'home/findmeian/img/6/5.jpg' %}" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+                <div class="text-container">
+                    <p class="text">此外，“团二大”第七次会议决定出版《中国青年》周刊，以对青年宣传。1923年10月20日，中国社会主义青年团机关刊《中国青年》在上海创刊。杰出的中国共产党人、早期中国青年运动卓越的领导者恽代英是《中国青年》第一任主编。他在《<b>发刊词</b>》中发出了石破天惊的疾呼：“中国的唯一希望，便是靠这些还勃勃有生气的青年。”《中国青年》宣传马克思主义和中国共产党的主张，动员鼓舞广大青年反对帝国主义、封建主义，同时还关注青年的学习、工作、生活等实际问题，因而受到当时青年们的热烈欢迎。萧楚女、林育南、邓中夏、张太雷、李求实等革命家都曾参与过《中国青年》早期创办工作或作为主要撰稿人。</p>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock content %}
+
+
+{% block script %}
+<script src="{% static 'home/findmeian/buttons.js' %}"></script>
+<script src="{% static 'home/findmeian/scroll.js' %}"></script>
+<script src="{% static 'home/Swiper/swiper-bundle.min.js' %}"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+      zoom: true,
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
+{% endblock script %}
+    
+    

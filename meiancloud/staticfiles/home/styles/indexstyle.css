@@ -1,0 +1,56 @@
+/*index.html的样式设置*/
+
+.intro p{
+  text-indent: 4ex;
+  margin: 10px;
+  
+}
+.intro {
+  margin-left: 220px;
+  margin-right: 220px;
+}
+
+hr{
+  color: green;
+}
+
+/*lxc 创始人布局 begin*/
+.intro-container {
+  display: flex; /* 使用Flexbox布局 */
+}
+
+.intro-text {
+  flex-grow: 1; /* 文本区域将填充剩余空间 */
+}
+
+/* 移除了固定定位 */
+.fade-in-image {
+  width: 359px; /* 设置图片宽度，根据需要调整 */
+  height: 448px; /* 设置图片高度，根据需要调整 */
+  opacity: 0; /* 初始透明度为0 */
+  /* position: fixed; 移除这一行 */
+  /* bottom: 20px; 移除这一行 */
+  /* right: 20px; 移除这一行 */
+  transition: opacity 1s ease-in-out; /* 透明度变化过渡效果 */
+}
+
+/* 当图片进入视口时的样式 */
+.fade-in-image.visible {
+  opacity: 1; /* 透明度变为1 */
+}
+
+/*lxc 创始人布局 end*/
+
+/* Swiper图片轮播 */
+.image-container{
+  text-align: center;
+  margin-top: 40px;
+}
+
+.indexSwiper{
+  --swiper-navigation-color: #fff;
+  --swiper-pagination-color: #fff;
+  width: 600px; height: 400px;
+}
+
+

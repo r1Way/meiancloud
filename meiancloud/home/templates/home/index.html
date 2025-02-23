@@ -1,0 +1,118 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block title %}
+<title>梅庵云迹</title>
+{% endblock title %}
+
+
+{% block otherstyles %}
+<link rel="stylesheet" href="{% static 'home/styles/indexstyle.css' %}">
+<link rel="stylesheet" href="{% static 'home/Swiper/swiper-bundle.min.css' %}">
+{% endblock otherstyles %}
+
+
+{% block index %}
+<meta name="description" content="探索东南大学梅庵的历史与文化，了解其深厚底蕴。'循迹梅庵'为您提供丰富的历史故事和文化背景，同时开放互动平台供参观者畅所欲言，帮助您深入了解梅庵的过去与现在。">
+<meta name="baidu-site-verification" content="codeva-4kBIrdUSHu" />
+<meta name="keywords">
+{% endblock index %}
+    
+
+{% block content %}
+<div class="image-container">
+    <div class="swiper indexSwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="swiper-zoom-container">
+                    <img src="{% static 'home/img/indeximg/1.png' %}"/>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-zoom-container">
+                    <img src="{% static 'home/img/indeximg/2.png' %}"/>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-zoom-container">
+                    <img src="{% static 'home/img/indeximg/3.png' %}"/>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+
+<hr>
+<div class="intro">
+    <div class="intro-container">
+        <div class="left">
+            <img src="{% static 'home/img/indeximg/chuangshiren.png' %}" alt="创始人" class="fade-in-image" id="id_csrimg">
+        </div>
+        <div class="right intro-text">
+            <h1>创始人</h1>
+            <p class="intro-text">
+                梅庵位于东南大学四牌楼校区，由两江师范学堂监督李瑞清之号得名。1915年，为纪念李瑞清办学之功，江谦校长在六朝松旁建起三间以带皮松木为梁架的茅草屋，环以梅树，命名为“梅庵”。李瑞清是中国近现代教育的重要奠基人，视教育如生命，推动中西贯通的教育改革，定校训“嚼得菜根，做得大事”，形成俭朴勤奋的校风。梅庵后成为古琴教学地、马克思主义传播中心和党团组织活动基地，其革命精神与红色基因深植于东南大学精神之中。
+            </p>
+        </div>
+    </div>
+
+    <hr>
+    <div class="intro-container">
+        <div class="left">
+            <h1>团二大会议</h1>
+            <p class="intro-text">梅庵见证了中国社会主义青年团第二次全国代表大会（团二大）的召开，这是青年运动的重要里程碑。五四运动后，南京高等师范学校成为马克思主义传播中心，杨贤江等人积极宣传，推动马克思主义传播。1923年8月20-25日，团二大在梅庵召开，毛泽东等出席，明确了团与党的关系，即组织独立但政策服从党，是团历史上唯一在高校召开的全国大会。团二大决定了团的发展方向，修正了团章，确保了与党在思想和行动上的一致。</p>
+        </div>
+        <div class="right">
+            <img src="{% static 'home/img/indeximg/tuanerda.jpg' %}" alt="团二大" class="fade-in-image" id="id_tedimg">
+        </div>
+    </div>
+    <hr>
+    <div class="intro-container">
+        <div class="left">
+            <img src="{% static 'home/img/indeximg/zgqn.png' %}" alt="中国青年" class="fade-in-image" id="id_zgqnimg">
+            <div>*图片来源于网络</div>
+        </div>
+        <div class="right intro-text">
+            <h1>影响及意义</h1>
+            <p class="intro-text">
+                团二大决定出版的《中国青年》周刊，由恽代英主编，宣传马克思主义和党的主张，鼓励青年反对帝封，关注青年实际问题，受到热烈欢迎。东南大学梅庵作为团二大召开地，承载了革命历史记忆，象征革命青年追求真理、投身革命。在新时代，挖掘梳理东南大学历史文化，传承中华优秀传统文化、革命文化，对培养有东大特色的领军人才意义重大。走进梅庵，仍能感受到革命热情和信仰力量。
+            </p>
+        </div>
+    </div>
+    <hr>
+    <div>
+        <h1>预约参观方式</h1>
+        <p>如果你想要预约参观东南大学四牌楼校区的梅庵并享受讲解服务，可以按照以下流程操作：梅庵目前仅接受团体预约，不接受个人预约。请至少提前一周联系至善讲解团，说明团体名称、人数、预约日期和时间等信息。校外人员需先联系校内部门申请入校。预约时可添加微信号tyguaojio12584联系童杨（信息更新至2025年2月15日）。预约示例：【XX单位/团体，共XX人，预约XX月XX日下午3:00参观梅庵】。参观时请遵守场馆规定，爱护文物，保持秩序。更多信息请查看微信公众号【SEU至善讲解团】。</p>
+    </div>
+</div>
+<br><br>
+{% endblock content %}
+
+
+{% block script %}
+<script src="{% static 'home/Swiper/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'home/script/sliderimg.js' %}"></script>
+<script>
+    var swiper = new Swiper(".indexSwiper", {
+      zoom: true,
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+</script>
+{% endblock script %}
+    
+    

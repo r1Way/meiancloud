@@ -1,0 +1,189 @@
+/* 通用样式 */
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+} */
+
+.container {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 60px auto;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+/* 左侧样式 */
+.left-side {
+    flex: 1;
+    background-color: #264c30;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    margin:0 20px;
+    /* border: 5px solid red; */
+}
+
+.avatar {
+    margin-bottom: 20px;
+}
+
+.avatar-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+}
+
+.nickname h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* 右侧样式 */
+.right-side {
+    flex: 2;
+    padding: 20px;
+    margin: 0 10px;
+    /* border: 5px solid red; */
+}
+
+.info-item {
+    margin-bottom: 20px;
+}
+
+.info-item label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.info-item span {
+    font-size: 18px;
+    color: #333;
+}
+
+/* 按钮样式 */
+.buttons{
+    margin: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 30vh;
+    /* border: 5px solid red; */
+    justify-content: center;
+    align-items: center;
+}
+.buttons button{
+    display: block;
+    width: 100px;
+    display: flex;
+    background-color: #264c30;
+    color: #fff;
+    border: none;
+    margin: 10px 10px;
+    padding: 10px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 分割线样式 */
+.divider{
+    margin: none;
+    border:2px solid gray;
+}
+
+/* 美化表单 */
+.info-item label, .info-item span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.info-item span {
+    color: #264c30;
+}
+
+
+/* 注销账号框 */
+#password-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(145deg, #ffffff, #f9f9f9);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    /* border: 10px solid red; */
+    /* box-sizing: border-box; */
+}
+
+#password-modal h3 {
+    margin: 0 0 20px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+#password-modal h3[style="color: red;"] {
+    color: #ff4d4d;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+#password-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+#password-input:focus {
+    border-color: #132c1a;
+    box-shadow: 0 0 8px #132c1a;
+}
+
+#confirm-button, #cancel-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#confirm-button {
+    background-color: #587558;
+    color: white;
+    margin-right: 10px;
+}
+
+#confirm-button:hover {
+    background-color: #263b30;
+    transform: translateY(-2px);
+}
+
+#cancel-button {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+#cancel-button:hover {
+    background-color: #ddd;
+    transform: translateY(-2px);
+}

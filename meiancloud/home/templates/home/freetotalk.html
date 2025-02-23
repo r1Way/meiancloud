@@ -1,0 +1,254 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block title %}
+<title>畅所欲言</title>
+{% endblock title %}
+
+{% block otherstyles %}
+<link rel="stylesheet" href="{% static 'home/freetotalk/freetotalk.css' %}">
+{% endblock otherstyles %}
+
+{% block content %}
+<!-- <h1 class="page-title">畅所欲言</h1> -->
+<h1 style="text-align: center;">畅所欲言</h1>
+
+<div class="container">
+    <div class="content-wrapper">
+        
+        <!-- 评论表单 -->
+        <div class="comment-form">
+            <h3 style="text-align: center;">在这里畅所欲言，发表您对梅庵的见解吧！</h3>
+            <form action="" method="post" id="id_comment-form">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="id_title">标题</label>
+                    {{ comment_form.title }}
+                </div>
+                <div class="form-group">
+                    <label for="id_content">内容</label>
+                    {{ comment_form.content }}
+                </div>
+                <input type="hidden" name="action_type" value="action1">
+                <button type="submit" class="submit-button submitting">发表评论</button>
+            </form>
+        </div>
+
+        <!-- 评论区 -->
+        <div class="comment-container">
+            <h3 style="text-align: center;">评论区</h3>
+            {% for comment in comments %}
+            <div class="comment-item"  data-comment-id="{{ comment.id }}">
+                <div class="comment-header">
+                    <div class="comment-author">
+                        <a href="{% url 'home:userprofile' userid=comment.owner.owner.id%}" style="text-decoration: none;">
+                            <img src="{{comment.owner.image.url}}" alt="avatar" class="comment-avatar">
+                        </a>
+                        <a href="{% url 'home:userprofile' userid=comment.owner.owner.id%}" class="comment-nick">{{ comment.owner.nick_name }}</a>
+                    </div>
+                    
+                    <span class="comment-date">{{ comment.date|date:"Y-m-d H:i" }}</span>
+                </div>
+                <h3 class="comment-title">{{ comment.title }}</h3>
+                <p class="comment-content">{{ comment.content }}</p>
+
+                <!-- 展开回复按钮 -->
+                <button class="reply-button" data-comment-id="{{ comment.id }}">展开回复</button>
+                
+                {% if user.username == comment.owner.owner.username %}
+                    <button class="delete-comment-btn" data-comment-id="{{ comment.id }}">删除评论</button>
+                {% endif %}
+
+
+                <div class="replies" id="replies-{{ comment.id }}" style="display: none;">
+                    {% for reply in comment.filtered_replies %}
+                    <div class="reply-item">
+                        <div class="reply-author">
+                            <a href="{% url 'home:userprofile' userid=reply.owner.owner.id%}" style="text-decoration: none;">
+                                <img src="{{reply.owner.image.url}}" alt="avatar" class="reply-avatar">
+                            </a>
+                            <a href="{% url 'home:userprofile' userid=reply.owner.owner.id%}" class="reply-nick"><b>{{ reply.owner.nick_name }}</b></a>
+                        </div>
+                        
+                        <p class="reply-item-content">{{ reply.content }}</p>
+                        <p class="reply-item-date">回复时间：{{ reply.date|date:"Y-m-d H:i" }}</p>
+                        
+                        {% if user.username == comment.owner.owner.username %}
+                        <button class="delete-comment-btn" data-comment-id="{{ reply.id }}">删除</button>
+                        {% endif %}
+                            
+                    </div>
+                    {% empty %}
+                    <p>暂无回复</p>
+                    {% endfor %}
+                    <hr>
+                    <p>发表回复</p>
+                    <!-- 添加回复表单 -->
+                   <div class="reply-form-container" style="margin-top: 10px;">
+                       <form method="post" action="" class="reply-form">
+                           {% csrf_token %}
+                           {{ reply_form.reply_content }}
+                           <input type="hidden" name="action_type" value="action2">
+                           <input type="hidden" name="comment_id" value="{{ comment.id }}">
+                           <button type="submit" class="submit-reply-button submitting">发表回复</button>
+                       </form>
+                   </div>
+                </div>
+            </div>
+
+            {% empty %}
+            <p class="no-comments">暂无评论，快来发表你的看法吧！</p>
+            {% endfor %}
+        </div>
+
+        <!-- 分页导航栏 -->
+        <div class="pagination">
+            <span class="step-links">
+                {% if comments.has_previous %}
+                    <a href="?page=1" class="pagination-link">&laquo; 第一页</a>
+                    <a href="?page={{ comments.previous_page_number }}" class="pagination-link">上一页</a>
+                {% endif %}
+                <span class="current-page">
+                    第 {{ comments.number }} 页，共 {{ comments.paginator.num_pages }} 页
+                </span>
+                {% if comments.has_next %}
+                    <a href="?page={{ comments.next_page_number }}" class="pagination-link">下一页</a>
+                    <a href="?page={{ comments.paginator.num_pages }}" class="pagination-link">最末页 &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+    </div>
+</div>
+        
+
+{% endblock content %}
+
+{% block script %}
+<!-- 删除逻辑 -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 为所有删除按钮绑定点击事件
+    document.querySelectorAll('.delete-comment-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            console.log('开始删除');
+            const commentId = this.getAttribute('data-comment-id');
+            console.log(commentId);
+            if (confirm('确定要删除这条评论吗？')) {
+                // 发送 DELETE 请求
+                fetch( `/freetotalk/?comment_id=${commentId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'X-CSRFToken': '{{ csrf_token }}',  // Django CSRF 令牌
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        // 删除成功，移除对应的评论 DOM 元素
+                        requestAnimationFrame(() => {
+                            document.querySelector(`.comment[data-comment-id="${commentId}"]`)?.remove();
+                            document.querySelector(`.reply[data-comment-id="${commentId}"]`)?.remove();
+                        });
+                        // document.querySelector(`.comment[data-comment-id="${commentId}"]`)?.remove();
+                        // document.querySelector(`.reply[data-comment-id="${commentId}"]`)?.remove();
+                        alert('评论删除成功');
+                        window.location.reload();
+                        console.log('OK');
+                    } else {
+                        alert('删除失败: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('删除失败，请稍后重试');
+                });
+            }
+        });
+    });
+});
+</script>
+
+<!-- 提交评论逻辑 -->
+<script>
+    document.addEventListener('DOMContentLoaded',function(){
+        document.getElementById('id_comment-form').addEventListener('submit', function (event) {
+        event.preventDefault();  // 阻止表单默认提交行为
+
+        // 获取表单数据
+        const formData = new FormData(this);
+
+        // 异步提交表单
+        fetch('{% url "home:freetotalk" %}', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRFToken': formData.get('csrfmiddlewaretoken')  // 传递 CSRF token
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('提交评论成功！请等待审核通过。');  // 弹出成功弹窗
+                window.location.reload();  // 重新加载页面
+            } else {
+                alert('提交评论失败！' + (data.errors || '未知错误'));  // 弹出失败弹窗
+            }
+        })
+        .catch(error => {
+            console.error('评论提交失败：', error);
+            alert('评论提交失败，请稍后重试。');
+        });
+        });
+    });
+</script>
+
+<!-- 提交回复逻辑 -->
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        var reply_forms=document.getElementsByClassName('reply-form');
+        //console.log(reply_forms);
+        [...reply_forms].forEach((form)=>{
+            form.addEventListener('submit', function (event) {
+            event.preventDefault();  // 阻止表单默认提交行为
+
+        // 获取表单数据
+        const formData = new FormData(this);
+
+        // 异步提交表单
+        fetch('{% url "home:freetotalk" %}', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRFToken': formData.get('csrfmiddlewaretoken')  // 传递 CSRF token
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('提交回复成功！请等待审核通过。');  // 弹出成功弹窗
+                window.location.reload();  // 重新加载页面
+            } else {
+                alert('提交回复失败！' + (data.errors || '未知错误'));  // 弹出失败弹窗
+            }
+        })
+        .catch(error => {
+            console.error('回复提交失败：', error);
+            alert('回复提交失败，请稍后重试。');
+        });
+        });
+        });
+        
+    });
+</script>
+
+<!-- 展开回复 -->
+<script>
+    document.querySelectorAll('.reply-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const repliesDiv = document.getElementById(`replies-${this.dataset.commentId}`);
+            repliesDiv.style.display = repliesDiv.style.display === 'block' ? 'none' : 'block';
+        });
+    });
+</script>
+{% endblock script %}

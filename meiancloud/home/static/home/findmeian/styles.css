@@ -1,0 +1,201 @@
+.buttons {
+    display: flex;
+    flex-direction:column ;
+    justify-content: center;  
+    /* border: 10px solid yellow; */
+    /* flex-wrap: wrap; */
+    /* justify-content: space-around; */
+}
+
+.buttons button {
+    font-size: 16px;
+    background-color: #B0E0E6;
+    color: black;
+    border-radius: 5px;/*按钮的圆角半径*/
+    cursor: pointer;
+    /* margin-bottom: 15px; */
+    transition: background-color 0.3s ease;
+}
+
+.buttons .corridor { 
+    display: flex;
+    align-items: center; /* 垂直居中内容 */
+    text-align: center; /* 水平居中字体 */
+    justify-content: center; /* 水平居中 */
+    font-size: 16px;
+    color: white;
+    border-radius: 5px;/*按钮的圆角半径*/
+    cursor: pointer;
+
+	width: 350px;              /* 矩形的宽度 */
+    height: 40px;             /* 矩形的高度 */
+    background-color: #4CAF50;  /* 矩形的背景颜色 */
+}
+
+.buttons .line1 .left {
+    /* 在这里添加针对 .left 元素的样式 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+
+.buttons button:hover {
+    background-color: #0056b3;
+}
+
+
+.line1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* 水平居中 */
+}
+.room14{
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* 垂直居中 */
+}
+
+.room56{
+    display: flex;
+    flex-direction: column;
+}
+
+.room23{
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* 水平居中 */
+}
+
+.button1{
+    width: 90px;
+    height: 100px;
+    margin: 0px 10px 0px 0px ;
+}
+
+.button4 {
+	width: 220px;
+    height: 100px;
+    margin: 0px 10px 0px 10px ;
+}
+
+.sections section {
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 20px 40px;
+    /* border: 10px solid yellow; */
+}
+
+.sections section.active {
+    display: block;
+}
+
+.button5 {
+	width: 90px;
+    height: 100px;
+    margin: 0px 10px 0px 0px ;
+}
+
+.button6 {
+	    width: 90px;
+    height: 100px;
+    margin: 0px px 0px 0px ;
+}
+
+.button2 {
+	width: 90px;
+    height: 100px;
+    margin: 0px 10px 0px 0px ;
+}
+
+.button3 {
+	width: 120px;
+    height: 100px;
+    margin: 0px 10px 0px 0px ;
+}
+/* FILEPATH: /findmeian/styles.css */
+.center-content {
+    text-align: center; /* 文本居中 */
+    margin-top: 20px; /* 可以根据需要调整间距 */
+}
+
+
+/* 初始状态：隐藏并位于左右两侧 */
+.image-container, .text-container {
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.text-container{
+    margin-top: 20px; /* 根据需要调整上边距 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* 确保容器高度为100%，以便垂直居中 */
+}
+
+
+.image-container {
+    transform: translateX(-100%);
+}
+
+.text-container {
+    transform: translateX(100%);
+}
+
+.scroll-section{
+    justify-content: space-between;
+    display: flex;
+    height: 500px;
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+    /* overflow: hidden; */
+    align-items: flex-start;
+}
+
+.scroll-section.visible{
+    opacity: 1;
+    transform: translateX(0);
+    
+}
+
+/* 动画触发时的状态 */
+.scroll-section.visible .image-container,
+.scroll-section.visible .text-container {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.image-container{
+    display: flex;
+    margin: 10px;
+    height: 100%;
+    /* border: 10px solid gray; */
+}
+.text-container{
+    display: flex;
+    flex-direction: column; /* 垂直排列子元素 */
+    margin: 10px;
+    align-items: center;
+    /* border: 10px solid red; */
+}
+
+.mySwiper{
+--swiper-navigation-color: #fff;
+--swiper-pagination-color: #fff;
+width: 500px; height: 100%;
+/* border: 10px solid yellow; */
+}
+
+p.text{
+    text-indent: 4ex;
+    margin: 10px;
+}
+
+/* findmeian弄窄一些 2025_2_16_lxc */
+.sections{
+    width: 1200px;
+    margin: 0 auto; /* 添加这行代码实现水平居中 */
+    /* border: 10px solid red; */
+}

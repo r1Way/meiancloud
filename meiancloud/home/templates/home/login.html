@@ -1,0 +1,83 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block title %}
+<title>登录</title>
+{% endblock title %}
+
+
+{% block otherstyles %}
+    <link rel="stylesheet" href="{% static 'home/styles/login.css' %}">
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+{% endblock otherstyles %}
+
+
+{% block headscript %}
+<script>
+    function showSuccessMessage(){
+        alert('登录成功');  // 弹窗显示消息
+        window.location.href = "{% url 'home:index' %}";
+    }
+</script>
+{% endblock headscript %}
+    
+    
+{% block content %}
+    <div class="container" style="text-align: center;">
+        <div class="login-container">
+            <h2>欢迎来到梅庵云迹！</h2>
+            <p>请登录您的账户</p>
+    
+            <!-- 显示非字段错误 -->
+            {% if form.non_field_errors %}
+                <div class="error-message">
+                    {% for error in form.non_field_errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+    
+            <form method="post" class="login-form">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="id_username">用户名</label>
+                    {{ form.username }}
+                    {% if form.username.errors %}
+                        <div class="field-error">
+                            {% for error in form.username.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="id_password">密码</label>
+                    {{ form.password }}
+                    {% if form.password.errors %}
+                        <div class="field-error">
+                            {% for error in form.password.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+                <button type="submit" class="login-button">立即登录</button>
+            </form>
+    
+            <div class="signup-link">
+                没有账户？ <a href="{% url 'home:register' %}">创建一个账户</a>
+            </div>
+        </div>
+    </div>
+
+    
+    {% if success %}
+        <script>
+            console.log('登录成功');
+            showSuccessMessage();
+        </script>
+    {% endif %}
+        
+
+{% endblock content %}
+
+

@@ -1,0 +1,68 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block title %}
+    <title>评论管理</title>
+{% endblock title %}
+
+
+{% block otherstyles %}
+    <link rel="stylesheet" href="{% static 'home/styles/comment_management.css' %}">
+{% endblock otherstyles %}
+    
+
+{% block content %}
+<h1 style="text-align: center;">评论管理</h1>
+<div class="table-container">
+<table>
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>标题</th>
+            <th>内容</th>
+            <th>作者</th>
+            <th>日期</th>
+            <th>父评论id</th>
+            <th>审核状态</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for comment in comments %}
+        <tr>
+            <td>{{comment.id}}</td>
+            <td>{{ comment.title }}</td>
+            <td>{{ comment.content }}</td>
+            <td>{{ comment.owner.owner.username }}</td>
+            <td>{{ comment.date }}</td>
+            <td>{{ comment.parent_comment.id}}</td>
+            <td>{% if comment.is_checked %}<span style="color: green;">已审核</span>
+                {% else %}<span style="color: red;">未审核</span>{% endif %}</td>
+            <td>
+                
+                {% if not comment.is_checked %}
+                <form method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <input type="hidden" name="comment_id" value="{{ comment.id }}">
+                    <button type="submit" name="approve">审核通过</button>
+                </form>
+                <form method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <input type="hidden" name="comment_id" value="{{ comment.id }}">
+                    <button type="submit" name="delete">审核不通过</button>
+                </form>
+                {% else %}
+                <form method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <input type="hidden" name="comment_id" value="{{ comment.id }}">
+                    <button type="submit" name="delete">删除评论</button>
+                </form>
+                {% endif %}
+                    
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

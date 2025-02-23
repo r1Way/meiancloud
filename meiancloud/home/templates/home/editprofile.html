@@ -1,0 +1,123 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>修改个人信息</title>
+{% endblock title %}
+
+
+{% block otherstyles %}
+    <link rel="stylesheet" href="{% static 'home/styles/editprofile.css' %}">
+{% endblock otherstyles %}
+
+{% block headscript %}
+<script>
+    function showSuccessMessage(x){
+        alert('修改成功');  // 弹窗显示消息
+        window.location.href = "{% url 'home:userprofile' userid=user.id %}";
+    }
+</script>
+{% endblock headscript %}
+
+{% block content %}
+<div class="container">
+    <h2>更改用户信息</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <div class="input-container">
+            <label for="id_nick_name">昵称</label>
+            {{ form.nick_name }}
+            {% if form.nick_name.errors %}
+                <div>
+                    {% for error in form.nick_name.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="input-container">
+            <label for="id_gender">性别</label>
+            {{ form.gender }}
+            {% if form.gender.errors %}
+                <div>
+                    {% for error in form.gender.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="input-container">
+            <label for="id_birthday">出生日期</label>
+            {{ form.birthday }}
+            {% if form.birthday.errors %}
+                <div>
+                    {% for error in form.birthday.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div>
+            <label>头像</label>
+            <div class="profile-image">
+                <div class="image-left">
+                    <img src="{% if userprofile.image %} {{ userprofile.image.url }} {% else %}#{% endif %}" alt="无法显示头像" id="current-image">
+                </div>
+                <div class="image-right">
+                    <label for="id_image">选择头像:</label>
+                    <input type="file" name="image" id="id_image" accept="image/*">
+                    <!-- <button type="button" class="reset-button" onclick="resetToDefault()">恢复至默认</button> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="input-container">
+            <label for="id_sign">个性签名</label>
+            {{ form.sign }}
+            {% if form.sign.errors %}
+                <div>
+                    {% for error in form.sign.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <button class="submit-button" type="submit">提交</button>
+    </form>
+</div>
+
+    {% if success %}
+    <script>
+        console.log('修改成功');
+        showSuccessMessage();
+    </script>
+    {% endif %}
+
+{% endblock content%}
+
+
+{% block script %}
+    <script>
+        document.getElementById('id_image').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('current-image').src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    });
+
+    // 恢复默认头像
+    // function resetToDefault() {
+    //     //console.log("{{ MEDIA_URL }}");
+    //     document.getElementById('current-image').src = "/media/home/user_img/default.png";
+    //     document.getElementById('id_image').value = '';  // 清空文件输入框
+    // }
+    // </script>
+{% endblock script %}
+    

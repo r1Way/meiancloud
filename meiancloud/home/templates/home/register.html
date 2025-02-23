@@ -1,0 +1,136 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block title %}
+<title>注册页面</title>
+{% endblock title %}
+
+{% block otherstyles %}
+    <!-- <style>
+        .errorlist{display: none;}
+    </style> -->
+    <link rel="stylesheet" href="{% static 'home/styles/login.css' %}">
+{% endblock otherstyles %}
+
+{% block headscript %}
+<script>
+    function showSuccessMessage(){
+        alert('注册成功！');  // 弹窗显示消息
+        window.location.href = "{% url 'home:index' %}";
+    }
+</script>
+{% endblock headscript %}
+
+{% block content %}
+<div class="container" style="text-align: center;">
+    <div class="login-container">
+        <h2>欢迎来到梅庵云迹！</h2>
+        <p>注册账户，开启新的梅庵之旅！</p>
+
+        <!-- 显示非字段错误 -->
+        {% if form.non_field_errors %}
+            <div class="error-message">
+                {% for error in form.non_field_errors %}
+                    <p>{{ error }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <form method="post" class="login-form">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_username">用户名</label>
+                {{ form.username }}
+                {% if form.username.errors %}
+                    <div class="field-error">
+                        {% for error in form.username.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <label for="id_password">密码</label>
+                {{ form.password }}
+                {% if form.password.errors %}
+                    <div class="field-error">
+                        {% for error in form.password.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <label for="id_password1">再次输入密码</label>
+                {{ form.password1 }}
+                {% if form.password1.errors %}
+                    <div class="field-error">
+                        {% for error in form.password1.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <label for="id_email">邮箱</label>
+                {{ form.email }}
+                {% if form.email.errors %}
+                    <div class="field-error">
+                        {% for error in form.email.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <hr>
+            <div class="form-group">
+                <label for="id_nick_name">昵称</label>
+                {{ form.nick_name }}
+                {% if form.nick_name.errors %}
+                    <div class="field-error">
+                        {% for error in form.nick_name.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <label for="id_gender" class="label_gender">性别</label>
+                {{ form.gender }}
+                {% if form.gender.errors %}
+                    <div class="field-error">
+                        {% for error in form.gender.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <label for="id_birthday">生日</label>
+                {{ form.birthday }}
+                {% if form.birthday.errors %}
+                    <div class="field-error">
+                        {% for error in form.birthday.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <button type="submit" class="login-button">立即注册</button>
+        </form>
+
+        <div class="signup-link">
+            注册账户，表明您已阅读并同意我们的 <b><a href="{% url 'home:user-agreement' %}"> 用户协议</a></b>
+        </div>
+
+        <div class="signup-link">
+            已有账户？ <a href="{% url 'home:login' %}">立即登录</a>
+        </div>
+    </div>
+</div>
+
+    
+    {% if success %}
+        <script>showSuccessMessage();</script>
+    {% endif %}
+        
+{% endblock content %}
