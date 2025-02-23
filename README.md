@@ -1,6 +1,6 @@
 # 梅庵云迹网站
 
-[网站链接www.meiancloud.site](www.meiancloud.site)
+[网站链接www.meiancloud.site](https://meiancloud.site/)
 
 ## 项目地址
 
