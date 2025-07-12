@@ -57,9 +57,9 @@
 ```shell
 # 首先确保已经安装了python 3.11
 # 克隆仓库
-git clone xxx
+git clone https://github.com/r1Way/meiancloud
 # 转入项目地址
-cd ./xxx/meiancloud
+cd ./meiancloud/meiancloud
 # 安装依赖
 pip3 install -r requirements.txt
 # 启动服务

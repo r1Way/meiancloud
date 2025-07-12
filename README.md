@@ -51,9 +51,9 @@ With the user system, users can register and log in. After logging in, users can
 ```shell
 # First, make sure Python 3.11 is installed
 # Clone the repository
-git clone xxx
+git clone https://github.com/r1Way/meiancloud
 # Navigate to the project directory
-cd ./xxx/meiancloud
+cd ./meiancloud/meiancloud
 # Install dependencies
 pip3 install -r requirements.txt
 # Start the service
