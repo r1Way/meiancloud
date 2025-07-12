@@ -1,5 +1,5 @@
 # Meian Cloud Website Project
-[**简体中文**](README.zh-CN.md) | [English](#)   
+[**简体中文**](README.zh-cn.md) | [English](#)   
 *(If you prefer Chinese, see [README.zh-cn.md](README.zh-CN.md).)*
 ## Project Introduction
 "Meian Cloud" is a website planned and implemented by the 梅庵云迹社会实践团, which showcases the historical culture of Meian in Southeast University through digital means. By combining front - end and back - end technologies, the project realizes functions such as Meian culture display, user interaction, and comment management, aiming to let more people understand the historical heritage and unique charm of Meian.
