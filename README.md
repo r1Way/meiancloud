@@ -62,7 +62,7 @@ python3 manage.py runserver
 ---
 
 ## Developers
-Thanks to all the members of the Meian Cloud Social Practice Group for their efforts and contributions.
+Thanks to all the members of the 梅庵云迹社会实践团 for their efforts and contributions.
 
 Special thanks to the following core developers for their contributions:
 
