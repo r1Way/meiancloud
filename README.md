@@ -20,27 +20,27 @@
 ---
 
 ## Function Module Introduction
-1. **Home Page**
+1. **Home Page**  
 The "Home Page" mainly introduces the core information of Meian. The carousel displays pictures of Meian and the team flag in a loop, showing the appearance of Meian and our team's practice journey. The text part comprehensively and briefly introduces Meian from multiple perspectives, including its historical culture, its special status as the venue of the Second National Congress of the Communist Youth League of China, and its influence and significance on future generations.
 ![Home Page](figs/main.png)
 
-2. **Tracing Meian**
+2. **Tracing Meian**  
 The "Tracing Meian" section focuses on displaying the exhibits and related introductions in the five exhibition halls inside Meian. Each exhibition hall's introduction is accompanied by selected photos taken by our team, providing visitors with an immersive visiting experience. To facilitate visitors to quickly find the introductions of various locations in Meian, this section also features an overview map of Meian. Visitors can simply click on the corresponding location to jump to the detailed introduction page of the corresponding exhibition hall, greatly enhancing the browsing convenience.
 ![Tracing Meian](figs/xjma.png)
 
-3. **Free Discussion**
+3. **Free Discussion**  
 The "Free Discussion" section is the interactive comment area of the website. After logging in, users can put forward suggestions, questions, or express their opinions. Meanwhile, our team and other users can reply to the comments, realizing two - way information exchange. This function not only enhances user participation but also provides a user feedback channel for the continuous optimization of the website.
 ![Free Discussion](figs/csyy.png)
 
-4. **Frequently Asked Questions**
+4. **Frequently Asked Questions**  
 The "Frequently Asked Questions" section answers common questions that users may ask, covering aspects such as historical details, visiting guides, and cultural values of Meian. By sorting out and answering these questions in advance, it can effectively improve the user experience and reduce the confusion that users may encounter during browsing.
 ![Frequently Asked Questions](figs/cjwt.png)
 
-5. **About Us**
+5. **About Us**  
 The "About Us" section mainly introduces the overview of the development team, the development background, technical architecture, and subsequent development plans of the website. Through this section, users can have a more comprehensive understanding of the website's production team and operation concept, enhancing users' trust in the website.
 ![About Us](figs/about.png)
 
-6. **User System**
+6. **User System**  
 With the user system, users can register and log in. After logging in, users can set their avatars, modify personal information (such as gender, birthday, personal signature, etc.), and change passwords, greatly improving the user experience.
 
 ---
