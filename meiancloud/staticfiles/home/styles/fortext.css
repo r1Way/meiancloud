@@ -9,22 +9,28 @@
     height: 100vh;
 } */
 
-.agreement-box {
-    background-color: #ffffff; /* 白色背景 */
-    border-radius: 15px; /* 圆角矩形 */
+.agreement-box ,
+.about{
+    width: 90%;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 轻微阴影效果 */
+    margin: 10px auto;
+    max-width: 900px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
     max-width: 800px; /* 限制最大宽度以适应不同屏幕 */
-    width: 90%; /* 在小屏幕上保持相对宽度 */
-    margin: auto; /* 水平居中 */
 }
 
-.agreement-box h1 {
-    font-size: 24px;
+.agreement-box h1,
+.about h1 {
+    /* font-size: 24px; */
+    text-align: center;
     margin-bottom: 20px;
 }
 
-.agreement-box p {
+.agreement-box p,
+.about p {
     text-indent: 4ex;
     font-size: 16px;
     line-height: 1.5;

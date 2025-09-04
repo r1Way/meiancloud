@@ -2,9 +2,12 @@
 //lxc 图片浮现
 document.addEventListener('DOMContentLoaded', function() {
     // 获取图片元素
-    var img = document.querySelector('.fade-in-image');
+    var imgs = document.querySelectorAll('.fade-in-image');
 
-    // 创建一个IntersectionObserver实例
+    //console.log(img);
+
+    imgs.forEach(img=>{
+        // 创建一个IntersectionObserver实例
     var observer = new IntersectionObserver(function(entries, observer) {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
@@ -20,6 +23,15 @@ document.addEventListener('DOMContentLoaded', function() {
         threshold: 0.6 // 当图片的60%进入视口时触发
     });
 
-    // 开始观察图片元素
     observer.observe(img);
+    });
+
+    
+
+    // 开始观察图片元素
+
+    // img.forEach(image=>{
+    //     observer.observe(image);
+    // })
+    //observer.observe(img);
 });

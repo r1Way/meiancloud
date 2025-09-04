@@ -1,9 +1,12 @@
 /*index.html的样式设置*/
 
-.intro p{
+.intro p.intro-text{
   text-indent: 4ex;
-  margin: 10px;
-  
+  margin: 15px;
+  /* border: 10px solid red; */
+}
+.intro h1{
+  margin: 15px;
 }
 .intro {
   margin-left: 220px;
@@ -17,6 +20,14 @@ hr{
 /*lxc 创始人布局 begin*/
 .intro-container {
   display: flex; /* 使用Flexbox布局 */
+  justify-content: space-between; /* 将子元素分布在容器的两端 */
+}
+
+.intro-container.left{
+  text-align: left;
+}
+.intro-container.right{
+  text-align: right;
 }
 
 .intro-text {
@@ -25,13 +36,27 @@ hr{
 
 /* 移除了固定定位 */
 .fade-in-image {
-  width: 359px; /* 设置图片宽度，根据需要调整 */
-  height: 448px; /* 设置图片高度，根据需要调整 */
+
   opacity: 0; /* 初始透明度为0 */
   /* position: fixed; 移除这一行 */
   /* bottom: 20px; 移除这一行 */
   /* right: 20px; 移除这一行 */
   transition: opacity 1s ease-in-out; /* 透明度变化过渡效果 */
+}
+
+#id_csrimg{
+  width: 359px; /* 设置图片宽度，根据需要调整 */
+  height: 448px; /* 设置图片高度，根据需要调整 */
+}
+
+#id_tedimg{
+  width: 578px; /* 设置图片宽度，根据需要调整 */
+  height: 448px; /* 设置图片高度，根据需要调整 */
+}
+
+#id_zgqnimg{
+  width: 359px; /* 设置图片宽度，根据需要调整 */
+  height: 448px; /* 设置图片高度，根据需要调整 */
 }
 
 /* 当图片进入视口时的样式 */

@@ -1,1 +1,50 @@
 /*about.html的样式设置*/
+
+.info-container {
+    text-align: center;
+    display: flex;
+}
+
+/* 每一块的通用样式 */
+.block {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+}
+
+/* 去掉最后一块的右边框 */
+.block:last-child {
+    border-right: none;
+}
+
+/* 图片样式 */
+.block img {
+    width: 200px;
+    /* height: 100px; */
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+/* 图片悬停效果 */
+.block img:hover {
+    transform: scale(1.05);
+}
+
+/* 文字样式 */
+.block h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* 链接样式 */
+.block a {
+    text-decoration: none;
+    color: #0073e6;
+    font-weight: bold;
+}
+
+.block a:hover {
+    text-decoration: underline;
+}

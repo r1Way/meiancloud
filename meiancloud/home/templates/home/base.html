@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 {% load static %}
+
 <head>
     <meta charset="UTF-8">
 
@@ -9,14 +10,14 @@
     <link rel="stylesheet" href="{% static 'home/styles/mainstyle.css' %}">
 
     {% block index %}{% endblock index %}
-        
+
     <script>
         function showLogoutDialog() {
             const result = window.confirm("你确定要退出登录吗?");
             if (result) {
-                window.location.href="{% url 'home:logout' %}";
+                window.location.href = "{% url 'home:logout' %}";
             }
-            else{
+            else {
                 window.location.reload();
             }
         }
@@ -28,55 +29,55 @@
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
         }
+
         .content.fade-in {
             opacity: 1;
         }
-    </style>    
+    </style>
 </head>
+
 <body>
     <header>
         <div class='group' style="display: inline-block;">
             <a href="{% url 'home:index' %}"><img src="{% static 'home/img/icon.png' %}" alt="Logo" id="logo"></a>
             <!-- <img src="{% static 'home/img/icon.png' %}" alt="Logo" id="logo"> -->
-             <a href="{% url 'home:index' %}"><img src="{% static 'home/img/logotext.png' %}" alt="logotext" id="logotext"></a>
+            <a href="{% url 'home:index' %}"><img src="{% static 'home/img/logotext.png' %}" alt="logotext"
+                    id="logotext"></a>
             <!-- <img src="{% static 'home/img/logotext.png' %}" alt="logotext" id="logotext"> -->
         </div>
         <!-- 用户: {{ nick_name }} -->
         <nav>
             {% if user.is_authenticated %}
-                <a href="{% if user.is_superuser %}{% url 'admin:index' %}{% else %}{% url 'home:userprofile' userid=user.id %}{% endif %}"
+            <a href="{% if user.is_superuser %}{% url 'admin:index' %}{% else %}{% url 'home:userprofile' userid=user.id %}{% endif %}"
+                {% if user.is_superuser %} class="nav-text" {% endif %}>
                 {% if user.is_superuser %}
-                    class="nav-text"
-                {% endif %}    
-                >
-                    {% if user.is_superuser %}
-                        用户：ADMIN
-                    {% else %}
-                        <img src="{{ userprofile.image.url }}" alt="头像" id="avatar">
-                    {% endif %}
-                </a>
+                用户：ADMIN
+                {% else %}
+                <img src="{{ userprofile.image.url }}" alt="头像" id="avatar">
+                {% endif %}
+            </a>
             {% else %}
-                <a href="{% url 'home:login' %}" class="nav-text">用户: 未登录</a>
+            <a href="{% url 'home:login' %}" class="nav-text">用户: 未登录</a>
             {% endif %}
             <a href="{% url 'home:index' %}" class="nav-text">首页</a>
             <a href="{% url 'home:findmeian' %}" class="nav-text">循迹梅庵</a>
-            
+
             {% if user.is_superuser %}
-                <a href="{% url 'home:comment-management' %}" class="nav-text">评论管理</a>
+            <a href="{% url 'home:comment-management' %}" class="nav-text">评论管理</a>
             {% else %}
-                <a href="{% url 'home:freetotalk' %}" class="nav-text">畅所欲言</a>
+            <a href="{% url 'home:freetotalk' %}" class="nav-text">畅所欲言</a>
             {% endif %}
-                
-            
+
+
             <a href="{% url 'home:question' %}" class="nav-text">常见问题</a>
             <a href="{% url 'home:about' %}" class="nav-text">关于我们</a>
-            
+
             {% if user.is_authenticated %}
-                <a href="javascript:void(0);" onclick="showLogoutDialog();" class="nav-text">退出登录</a>
+            <a href="javascript:void(0);" onclick="showLogoutDialog();" class="nav-text">退出登录</a>
             {% else %}
-                <a href="{% url 'home:login' %}" class="nav-text">登录</a>
+            <a href="{% url 'home:login' %}" class="nav-text">登录</a>
             {% endif %}
-                
+
         </nav>
     </header>
     <div class="header-avoid"></div>
@@ -90,23 +91,22 @@
             <a href="https://www.seu.edu.cn" target="_blank">友情链接：东南大学官网</a>
             <a href="{% url 'home:user-agreement' %}" target="_blank">用户协议</a>
             {% if user.is_superuser %}
-                <a href="https://1.117.220.194:10086/tencentcloud" target="_blank">宝塔面板</a>
+            <a href="https://129.211.163.165:10010/home" target="_blank">宝塔面板</a>
             {% endif %}
-            
+
         </span>
-        <a class="right" href="https://beian.miit.gov.cn/" target="_blank">渝ICP备2024048135号&nbsp;&nbsp;</a>
     </footer>
     <br><br>
-    
+
     {% block script %}{% endblock script %}
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const content = document.querySelector('.content');
             content.classList.add('fade-in');
 
             const links = document.querySelectorAll('a');
             links.forEach(link => {
-                link.addEventListener('click', function(event) {
+                link.addEventListener('click', function (event) {
                     if (link.href && link.href !== '#' && !link.target) {
                         event.preventDefault();
                         content.classList.remove('fade-in');
@@ -120,7 +120,7 @@
         });
 
         // 监听浏览器后退按钮，确保内容恢复显示
-        window.onpageshow = function(event) {
+        window.onpageshow = function (event) {
             if (event.persisted) {
                 const content = document.querySelector('.content');
                 content.classList.add('fade-in');
@@ -128,4 +128,5 @@
         };
     </script>
 </body>
+
 </html>

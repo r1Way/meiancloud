@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://www.meiancloud.site/</loc>
+  <lastmod>2025-02-21T08:39:34+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.meiancloud.site/profile/2/</loc>
+  <lastmod>2025-02-21T08:39:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.meiancloud.site/findmeian/</loc>
+  <lastmod>2025-02-21T08:39:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.meiancloud.site/freetotalk/</loc>
+  <lastmod>2025-02-21T08:39:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.meiancloud.site/question/</loc>
+  <lastmod>2025-02-21T08:39:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.meiancloud.site/about/</loc>
+  <lastmod>2025-02-21T08:39:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.meiancloud.site/agreement/</loc>
+  <lastmod>2025-02-21T08:39:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.meiancloud.site/login/?next=/changepsw/2/</loc>
+  <lastmod>2025-02-21T08:39:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.meiancloud.site/login_prompt/?next=/editprofile/2/</loc>
+  <lastmod>2025-02-21T08:39:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.meiancloud.site/login/</loc>
+  <lastmod>2025-02-21T08:39:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.meiancloud.site/register/</loc>
+  <lastmod>2025-02-21T08:39:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+
+
+</urlset>

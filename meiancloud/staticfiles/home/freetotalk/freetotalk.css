@@ -86,11 +86,6 @@ body {
     margin-bottom: 10px;
 }
 
-.comment-author {
-    font-weight: bold;
-    color: #264c30;
-}
-
 .comment-date {
     color: #888;
     font-size: 0.9rem;
@@ -163,10 +158,13 @@ body {
 }
 
 .reply-item p.reply-item-content{
-    display: flex;
+    /* text-indent: 0ex; */
+    /* display: flex; */
     justify-content: left;
+    margin-left: 30px;
 }
 .reply-item p.reply-item-date{
+    font-size: 12px;
     display: flex;
     justify-content: right;
 }
@@ -189,4 +187,48 @@ body {
 /*展开收起回复*/
 .hidden {
     display: none;
+}
+
+.comment-author{
+    display: flex;
+    align-items: center;
+}
+
+.comment-avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    /* border: 3px solid #fff; */
+}
+.comment-author a.comment-nick{
+    font-weight: bold;
+    color: #264c30;
+    margin-left: 10px;
+    /* color: white; */
+    text-decoration: none;
+    font-size: 20px;
+    /* border: 10px solid red; */
+}
+
+.reply-author{
+    display: flex;
+    align-items: center;
+}
+
+.reply-avatar{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    /* border: 3px solid #fff; */
+}
+
+.reply-author a.reply-nick{
+    font-weight: bold;
+    color: #264c30;
+    margin-left: 10px;
+    /* color: white; */
+    text-decoration: none;
+    font-size: 16px;
 }

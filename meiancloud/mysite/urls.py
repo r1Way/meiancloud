@@ -30,9 +30,6 @@ urlpatterns = [
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-print(settings.MEDIA_ROOT,'AAA',settings.STATIC_ROOT)
-print(1,'ASD')
-
 handler404 = page_not_found
 handler500 = server_error
 handler403 = permission_denied

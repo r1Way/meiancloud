@@ -19,9 +19,11 @@ urlpatterns = [
     path('delete_account/',views.delete_account,name='delete_account'),
     path('agreement/',views.user_agreement,name='user-agreement'),
     path('comment-management/', views.comment_management, name='comment-management'),
+    path('api/chat/',views.chat_api, name='chat_api')
 ]
 
 #XMLs
 urlpatterns +=[
     path('BingSiteAuth.xml',TemplateView.as_view(template_name='xml/BingSiteAuth.xml', content_type='text/xml')),
+    path('sitemap.xml',TemplateView.as_view(template_name='xml/sitemap.xml', content_type='text/xml')),
 ]

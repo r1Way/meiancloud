@@ -71,7 +71,7 @@
                         </div>
                         
                         <p class="reply-item-content">{{ reply.content }}</p>
-                        <p class="reply-item-date">回复时间：{{ reply.date|date:"Y-m-d H:i" }}</p>
+                        <p class="reply-item-date">{{ reply.date|date:"Y-m-d H:i" }}</p>
                         
                         {% if user.username == comment.owner.owner.username %}
                         <button class="delete-comment-btn" data-comment-id="{{ reply.id }}">删除</button>

@@ -1,2 +1,16 @@
 Django==4.2
 Pillow==11.1.0
+bidict==0.23.1
+certifi==2024.2.2
+charset-normalizer==3.3.2
+h11==0.14.0
+netifaces==0.10.6
+python-engineio==4.9.0
+python-socketio==5.11.4
+requests==2.31.0
+simple-websocket==1.0.0
+sseclient-py==1.8.0
+tencentcloud-sdk-python==3.0.1224
+websocket-client==1.8.0
+websockets==13.0.1
+wsproto==1.2.0

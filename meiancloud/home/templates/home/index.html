@@ -9,6 +9,7 @@
 {% block otherstyles %}
 <link rel="stylesheet" href="{% static 'home/styles/indexstyle.css' %}">
 <link rel="stylesheet" href="{% static 'home/Swiper/swiper-bundle.min.css' %}">
+<link rel="stylesheet" href="{% static 'home/styles/chat_ai.css' %}">
 {% endblock otherstyles %}
 
 
@@ -17,7 +18,7 @@
 <meta name="baidu-site-verification" content="codeva-4kBIrdUSHu" />
 <meta name="keywords">
 {% endblock index %}
-    
+
 
 {% block content %}
 <div class="image-container">
@@ -25,23 +26,54 @@
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <div class="swiper-zoom-container">
-                    <img src="{% static 'home/img/indeximg/1.png' %}"/>
+                    <img src="{% static 'home/img/indeximg/1.png' %}" />
                 </div>
             </div>
             <div class="swiper-slide">
                 <div class="swiper-zoom-container">
-                    <img src="{% static 'home/img/indeximg/2.png' %}"/>
+                    <img src="{% static 'home/img/indeximg/2.png' %}" />
                 </div>
             </div>
             <div class="swiper-slide">
                 <div class="swiper-zoom-container">
-                    <img src="{% static 'home/img/indeximg/3.png' %}"/>
+                    <img src="{% static 'home/img/indeximg/3.png' %}" />
                 </div>
             </div>
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-pagination"></div>
+    </div>
+</div>
+
+<hr>
+
+<div style="display: flex; justify-content: center;">
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>AI智能助手</h2>
+        </div>
+
+        <div class="chat-messages" id="chat-messages">
+            <div class="message bot-message">
+                <div class="avatar bot-avatar">
+                    <img src="{% static 'home/img/indeximg/chat_ai_avatar.jpg' %}" alt="AI头像"
+                        style="width:40px; height:40px; border-radius:50%;">
+                </div>
+                <div class="message-content bot-content">
+                    您好！我是AI助手，很高兴为您服务。请问有什么可以帮您的吗？
+                </div>
+            </div>
+        </div>
+
+        <div class="typing-indicator" id="typing-indicator">
+            AI正在思考中...
+        </div>
+
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="请输入您的问题..." autocomplete="off">
+            <button id="send-button" onclick="sendMessage()">发送</button>
+        </div>
     </div>
 </div>
 
@@ -63,7 +95,9 @@
     <div class="intro-container">
         <div class="left">
             <h1>团二大会议</h1>
-            <p class="intro-text">梅庵见证了中国社会主义青年团第二次全国代表大会（团二大）的召开，这是青年运动的重要里程碑。五四运动后，南京高等师范学校成为马克思主义传播中心，杨贤江等人积极宣传，推动马克思主义传播。1923年8月20-25日，团二大在梅庵召开，毛泽东等出席，明确了团与党的关系，即组织独立但政策服从党，是团历史上唯一在高校召开的全国大会。团二大决定了团的发展方向，修正了团章，确保了与党在思想和行动上的一致。</p>
+            <p class="intro-text">
+                梅庵见证了中国社会主义青年团第二次全国代表大会（团二大）的召开，这是青年运动的重要里程碑。五四运动后，南京高等师范学校成为马克思主义传播中心，杨贤江等人积极宣传，推动马克思主义传播。1923年8月20-25日，团二大在梅庵召开，毛泽东等出席，明确了团与党的关系，即组织独立但政策服从党，是团历史上唯一在高校召开的全国大会。团二大决定了团的发展方向，修正了团章，确保了与党在思想和行动上的一致。
+            </p>
         </div>
         <div class="right">
             <img src="{% static 'home/img/indeximg/tuanerda.jpg' %}" alt="团二大" class="fade-in-image" id="id_tedimg">
@@ -85,7 +119,8 @@
     <hr>
     <div>
         <h1>预约参观方式</h1>
-        <p>如果你想要预约参观东南大学四牌楼校区的梅庵并享受讲解服务，可以按照以下流程操作：梅庵目前仅接受团体预约，不接受个人预约。请至少提前一周联系至善讲解团，说明团体名称、人数、预约日期和时间等信息。校外人员需先联系校内部门申请入校。预约时可添加微信号tyguaojio12584联系童杨（信息更新至2025年2月15日）。预约示例：【XX单位/团体，共XX人，预约XX月XX日下午3:00参观梅庵】。参观时请遵守场馆规定，爱护文物，保持秩序。更多信息请查看微信公众号【SEU至善讲解团】。</p>
+        <p>如果你想要预约参观东南大学四牌楼校区的梅庵并享受讲解服务，可以按照以下流程操作：梅庵目前仅接受团体预约，不接受个人预约。请至少提前一周联系至善讲解团，说明团体名称、人数、预约日期和时间等信息。校外人员需先联系校内部门申请入校。预约时可添加微信号tyguaojio12584联系童杨（信息更新至2025年2月15日）。预约示例：【XX单位/团体，共XX人，预约XX月XX日下午3:00参观梅庵】。参观时请遵守场馆规定，爱护文物，保持秩序。更多信息请查看微信公众号【SEU至善讲解团】。
+        </p>
     </div>
 </div>
 <br><br>
@@ -95,24 +130,25 @@
 {% block script %}
 <script src="{% static 'home/Swiper/swiper-bundle.min.js' %}"></script>
 <script src="{% static 'home/script/sliderimg.js' %}"></script>
+<!-- 使用cdnjs替换jsdelivr -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script>
+<script src="{% static 'home/script/chat_ai.js' %}"></script>
 <script>
     var swiper = new Swiper(".indexSwiper", {
-      zoom: true,
-      loop: true,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-    },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
+        zoom: true,
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
     });
 </script>
 {% endblock script %}
-    
-    
